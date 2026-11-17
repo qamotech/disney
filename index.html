@@ -204,6 +204,17 @@ header h1::after{content:" \2726";display:inline-block;color:#8ad6ff;animation:t
 .loop13-wave{animation:captionCascadeWave .9s ease-out both}
 .loop13-comet{position:absolute;bottom:6px;pointer-events:none;opacity:0;z-index:2;font-size:12px;animation:cometDrift 3.8s linear forwards}
 @keyframes cometDrift{0%{transform:translateX(0) translateY(0);opacity:0}15%{opacity:.95}100%{transform:translateX(120px) translateY(-26px);opacity:0}}
+
+/* SHARE-CARD-71 */
+.sharecard{background:linear-gradient(160deg,#1a1440,#101831);border:1px solid #d4a017;border-radius:18px;padding:18px 14px;margin:16px 0;text-align:center;box-shadow:0 0 22px rgba(212,160,23,.25)}
+.sharecard h2{font-size:1.25rem;margin:2px 0 6px}
+.sharecard p{color:#c7d2ff;margin:0 0 14px;line-height:1.45}
+.share-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.sharebtn{background:#3a2c05;border:1px solid #d4a017;color:#ffd95e;font-weight:800;font-size:.98rem;padding:11px 16px;border-radius:999px;cursor:pointer;text-decoration:none;display:inline-block;font-family:inherit}
+.sharebtn.main{background:#d4a017;color:#1a1200}
+.sharebtn:active{transform:scale(.96)}
+#shareToast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(80px);background:#123f35;color:#7dffd4;border:1px solid #2b7a5f;padding:10px 18px;border-radius:999px;font-weight:700;z-index:50;transition:transform .35s ease;max-width:92vw;text-align:center}
+#shareToast.show{transform:translateX(-50%) translateY(0)}
 </style></head><body>
 <header>
 <h1>🏰 Disney Two Ways<br>Normal Day vs 💎 Amway Buyout Night</h1>
@@ -277,6 +288,17 @@ header h1::after{content:" \2726";display:inline-block;color:#8ad6ff;animation:t
   <p class="caption">🛍️ Shopping: packed Emporium, long checkout lines — vs calm exclusive shopping & event-night merch.</p>
 </section>
 <div class="honest">🎨 <strong>Illustrated with AI</strong> — what buyout nights are like vs a regular park day. These are AI-illustrated comparisons, not real event photos.</div>
+
+<section class="sharecard" id="shareCard">
+  <h2>📤 Share This Page</h2>
+  <p>Know someone who dreams of Disney without the crowds? 🏰<br>Pass it along in one tap — same link, no hunting for it.</p>
+  <div class="share-row">
+    <button class="sharebtn main" id="shareNative" type="button">📤 Share</button>
+    <button class="sharebtn" id="shareCopy" type="button">📋 Copy Link</button>
+    <a class="sharebtn" href="sms:?&body=%F0%9F%8F%B0%20Disney%20Two%20Ways%20%E2%80%94%20a%20normal%20park%20day%20vs%20an%20Amway%20buyout%20night%20for%20IBOs.%20Crowds%20vs%20walk-on%20rides%2C%2090-min%20lines%20vs%20an%20empty%20park.%20Look%20at%20this%3A%20https%3A//qamotech.github.io/disney/">💬 Text It</a>
+    <a class="sharebtn" href="mailto:?subject=%F0%9F%8F%B0%20Disney%20Two%20Ways%20%E2%80%94%20Normal%20Day%20vs%20Amway%20Buyout%20Night&body=%F0%9F%8F%B0%20Disney%20Two%20Ways%20%E2%80%94%20a%20normal%20park%20day%20vs%20an%20Amway%20buyout%20night%20for%20IBOs.%20Crowds%20vs%20walk-on%20rides%2C%2090-min%20lines%20vs%20an%20empty%20park.%20Look%20at%20this%3A%20https%3A//qamotech.github.io/disney/">✉️ Email</a>
+  </div>
+</section>
 </main>
 <footer>💎 Built for Clark Essential Solutions — Nathan and Jishawna<br><a href="https://www.amway.com/myshop/n8andshawna">Shop with us on Amway →</a></footer>
 
@@ -325,5 +347,14 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 
 <script>/* LOOP-CYCLE-13 */
 (function(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;setTimeout(function(){t.classList.remove('loop13-wave');void t.offsetWidth;t.classList.add('loop13-wave');},(parseInt(t.dataset.loop13i||'0',10)%6)*90);}});},{threshold:.4});document.querySelectorAll('.caption').forEach(function(c,i){c.dataset.loop13i=i;io.observe(c);});var f=document.querySelector('footer');if(f){f.style.position='relative';f.style.overflow='hidden';function comet(){var s=document.createElement('span');s.className='loop13-comet';s.textContent='\u2727';s.style.left=(5+Math.random()*70)+'%';s.style.color=['#ffe27a','#ff8ac2','#8ad6ff','#7dffd4'][Math.floor(Math.random()*4)];f.appendChild(s);setTimeout(function(){s.remove()},4000);}comet();setInterval(comet,2100);}})();
+</script>
+
+<script>/* SHARE-CARD-71 */
+(function(){var URL_='https://qamotech.github.io/disney/';var DATA={title:'🏰 Disney Two Ways — Normal Day vs 💎 Amway Buyout Night',text:'🏰 Disney Two Ways — a normal park day vs an Amway buyout night for IBOs. Crowds vs walk-on rides, 90-min lines vs an empty park. Look at this:',url:URL_};
+var toast=document.createElement('div');toast.id='shareToast';document.body.appendChild(toast);var tt;function show(msg){toast.textContent=msg;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},2600);}
+function copyLink(msg){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(URL_).then(function(){show(msg)},function(){show('📋 Copy this link: '+URL_)})}else{show('📋 Copy this link: '+URL_)}}
+document.getElementById('shareCopy').addEventListener('click',function(){copyLink('📋 Link copied — pass it along!')});
+document.getElementById('shareNative').addEventListener('click',async function(){if(navigator.share){try{await navigator.share(DATA);show('📤 Thanks for sharing!');return;}catch(e){if(e&&e.name==='AbortError')return;}}copyLink('📋 Link copied — share it anywhere!');});
+})();
 </script>
 </body></html>
